@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1693256453 source:c:\users\kowal\desktop\utn\2023\2do cuatri\laboratorio2\blackjack\blackjackv2\main.cpp
+	<iostream>
+	"Jugador.h"
+	"Carta.h"
+
+1693248023 source:c:\users\kowal\desktop\utn\2023\2do cuatri\laboratorio2\blackjack\blackjackv2\src\carta.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	"Carta.h"
+
+1693241196 c:\users\kowal\desktop\utn\2023\2do cuatri\laboratorio2\blackjack\blackjackv2\include\carta.h
+
+1693256543 source:c:\users\kowal\desktop\utn\2023\2do cuatri\laboratorio2\blackjack\blackjackv2\src\jugador.cpp
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	"Jugador.h"
+
+1693256305 c:\users\kowal\desktop\utn\2023\2do cuatri\laboratorio2\blackjack\blackjackv2\include\jugador.h
+
