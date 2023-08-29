@@ -1,0 +1,86 @@
+#include <iostream>
+#include "Jugador.h"
+#include "Carta.h"
+
+using namespace std;
+//variables globales
+
+
+//funciones.h
+void menu (int );
+void bienvenida (int, char);
+void CrearUsuario ();
+
+
+
+
+
+
+//funciones cpp
+int menu () //Numero de jugadores. Maximo 3.
+{
+    int cant_jugadores = 0;
+    while (cant_jugadores < 1 || cant_jugadores > 3)
+    {
+        cout << "Cuantos jugadores quieren ingresar a la sala: ";
+        cin >> cant_jugadores;
+        cout << endl;
+
+        if (cant_jugadores > 3)
+        {
+            cout << "Maximo 3 jugadores ! " << endl;
+        }
+        else if (cant_jugadores < 1)
+        {
+            cout << "Elige entre 1, 2 o 3 jugadores" << endl;
+        }
+    }
+    system ("Pause");
+    system ("cls");
+    return cant_jugadores;
+}
+
+
+void bienvenida () 				//Portada
+{
+    cout <<"==========================================================================="<< endl;
+    cout <<"=                                                                         ="<< endl;
+    cout <<"=                               ~BLACKJACK~                               ="<< endl;
+    cout <<"=                                                                         ="<< endl;
+    cout <<"==========================================================================="<< endl;
+
+}
+
+
+void CrearUsuario (int cant_jugadores, Jugador jugadores[] ) 	//Se ingresa el nombre de usuario. ****Ese nombre lo tenemos que llevar a la class usuario*****
+{
+    //Se repite la cantidad de veces que se haya ingresado como num_jugador
+    char nombre [20];
+
+    for (int i = 0; i < cant_jugadores; i++)
+    {
+        cout << "Nombre de Usuario " << i + 1 ;
+        cin >>  nombre ;
+        Jugador jugador(nombre);
+    }
+
+    system("cls");
+
+}
+
+
+int main()
+{
+    int cant_jugadores, i;
+    Jugador jugadores[3]; // VER MEMORIA DINAMICA
+
+    bienvenida ();
+    cant_jugadores = menu();
+    CrearUsuario(cant_jugadores, jugadores);
+    for(i=0;i<cant_jugadores;i++){
+        jugadores[i].repartirCartas();
+        jugadores[i].mostrarMano(jugadores[i].getMisCartas(), jugadores[i].getCantCartas());
+    }
+    system ("pause");
+    return 0;
+}
